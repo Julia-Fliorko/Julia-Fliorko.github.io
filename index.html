@@ -3,132 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuliia Fliorko | Data Analyst</title>
+  <title>Julia Fliorko | Data Scientist</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DYCBC5MYN1');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYCBC5MYN1');
+  </script>
 </head>
-<body data-page-type="home">
+<!-- HEADER -->
+<header id="header">
+  <nav class="nav">
+    <a href="#hero" class="brand" aria-label="Go to Home">Julia Fliorko</a>
 
-  <header id="header">
-    <nav class="nav">
+    <div class="nav-center">
       <a href="#hero" class="nav-link" data-nav="home">Home</a>
       <a href="#about" class="nav-link" data-nav="about">About</a>
       <a href="#portfolio" class="nav-link" data-nav="portfolio">Portfolio</a>
       <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
-  <main>
-    
+<!-- HERO -->
+<!-- HERO -->
 <section id="hero" class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
 
   <div class="container hero-inner">
     <div class="hero-left">
       <p class="hero-kicker">Data Scientist</p>
-      <h1 class="hero-title">Julie Fliorko</h1>
+      <h1 class="hero-title">Julia Fliorko</h1>
 
       <div class="hero-chips" role="list" aria-label="Core tools">
         <span class="chip pill" role="listitem">SQL</span>
         <span class="chip pill" role="listitem">Python</span>
         <span class="chip pill" role="listitem">Tableau</span>
+        <span class="chip pill" role="listitem">ML</span>
       </div>
 
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#portfolio">View Portfolio</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-      </div>
+      <div class="hero-social" aria-label="Social links">
+        <a class="icon-pill"
+           href="https://www.linkedin.com/in/yuliia-fliorko/"
+           target="_blank" rel="noreferrer"
+           aria-label="LinkedIn" data-link="linkedin">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 6.5A2.44 2.44 0 1 1 7 1.62a2.44 2.44 0 0 1-.06 4.88ZM2.5 22h4.9V7.98H2.5V22ZM9.1 7.98H13.8v1.92h.07c.65-1.22 2.24-2.5 4.62-2.5 4.94 0 5.86 3.25 5.86 7.48V22h-4.9v-5.97c0-1.42-.03-3.25-1.98-3.25-1.98 0-2.28 1.55-2.28 3.14V22H9.1V7.98Z"/>
+          </svg>
+        </a>
 
-     <!--- <div class="hero-links" aria-label="Social links">
-        <a class="icon-btn" href="https://github.com/Julie-Fliorko" target="_blank" rel="noreferrer" data-link="github">
-          GitHub
+        <a class="icon-pill"
+           href="https://github.com/Julia-Fliorko"
+           target="_blank" rel="noreferrer"
+           aria-label="GitHub" data-link="github">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.8c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.47-2.47-.28-5.07-1.23-5.07-5.48 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.02 1.14a10.4 10.4 0 0 1 5.5 0c2.1-1.44 3.02-1.14 3.02-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.26-2.6 5.2-5.08 5.47.39.34.74 1.02.74 2.06v3.05c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/>
+          </svg>
         </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/yuliia-fliorko/" target="_blank" rel="noreferrer" data-link="linkedin">
-          LinkedIn
+
+        <a class="icon-pill"
+           href="https://public.tableau.com/app/profile/yuliia.fliorko/vizzes"
+           target="_blank" rel="noreferrer"
+           aria-label="Tableau" data-link="tableau">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z"/>
+          </svg>
         </a>
-        <a class="icon-btn" href="https://public.tableau.com/app/profile/yuliia.fliorko/vizzes" target="_blank" rel="noreferrer" data-link="tableau">
-          Tableau
-        </a>
-      </div>-->
+      </div>
     </div>
 
     <div class="hero-right">
       <div class="hero-image">
-        <img src="assets/images/headshot.webp" alt="Julie Fliorko headshot" />
+        <img src="assets/images/headshot.webp" alt="Julia Fliorko headshot" />
       </div>
     </div>
   </div>
 </section>
 
+    <section id="about">
+      <h2>About</h2>
 
-<section id="about">
-  <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <h3>Education</h3>
+          <ul></ul>
+        </div>
 
-  <div class="about-grid">
-    <div>
-      <h3>Education</h3>
-      <ul></ul>
-    </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul></ul>
+        </div>
 
-    <div>
-      <h3>Certifications</h3>
-      <ul></ul>
-    </div>
+        <div>
+          <h3>Professional Background</h3>
+          <ul></ul>
+        </div>
 
-    <div>
-      <h3>Professional Background</h3>
-      <ul></ul>
-    </div>
+        <div>
+          <h3>Tools & Skills</h3>
+          <ul></ul>
+        </div>
+      </div>
+    </section>
 
-    <div>
-      <h3>Tools & Skills</h3>
-      <ul></ul>
-    </div>
-  </div>
-</section>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
+      <div class="portfolio-filters">
+        <div class="filter-group">
+          <h3>Filter by Tools</h3>
+          <div id="toolFilters" class="chip-row"></div>
+        </div>
 
-  <div class="portfolio-filters">
-    <div class="filter-group">
-      <h3>Filter by Tools</h3>
-      <div id="toolFilters" class="chip-row"></div>
-    </div>
+        <div class="filter-group">
+          <h3>Filter by Skills</h3>
+          <div id="skillFilters" class="chip-row"></div>
+        </div>
+      </div>
 
-    <div class="filter-group">
-      <h3>Filter by Skills</h3>
-      <div id="skillFilters" class="chip-row"></div>
-    </div>
-  </div>
+      <div class="portfolio-grid" id="projectGrid"></div>
+    </section>
 
-  <div class="portfolio-grid" id="projectGrid"></div>
-</section>
+    <section id="contact">
+      <h2>Contact</h2>
 
-<section id="contact">
-  <h2>Contact</h2>
+      <div class="contact-actions">
+        <a href="assets/pdf/portfolio.pdf" download data-contact="download">
+          Download Portfolio (PDF)
+        </a>
 
-  <div class="contact-actions">
-    <a href="assets/pdf/portfolio.pdf" download data-contact="download">
-      Download Portfolio (PDF)
-    </a>
+        <a href="https://www.linkedin.com/in/yuliia-fliorko/" data-contact="linkedin">LinkedIn</a>
+        <a href="https://github.com/Julie-Fliorko" data-contact="github">GitHub</a>
+        <a href="https://public.tableau.com/app/profile/yuliia.fliorko/vizzes" data-contact="tableau">Tableau</a>
+        <a href="mailto:jfliorko@gmail.com" data-contact="email">jfliorko@gmail.com</a>
+      </div>
+    </section>
 
-    <a href="https://www.linkedin.com/in/yuliia-fliorko/" data-contact="linkedin">LinkedIn</a>
-    <a href="https://github.com/Julie-Fliorko" data-contact="github">GitHub</a>
-    <a href="https://public.tableau.com/app/profile/yuliia.fliorko/vizzes" data-contact="tableau">Tableau</a>
-    <a href="mailto:jfliorko@gmail.com" data-contact="email">jfliorko@gmail.com</a>
-  </div>
-</section>
   </main>
-<script src="assets/js/analytics.js"></script>
-<script src="assets/js/main.js"></script>
+
+  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
