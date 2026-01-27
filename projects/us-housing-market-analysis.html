@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U.S. Housing Market Analysis | Julia Fliorko</title>
+
+    <!-- Global site CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Project-specific CSS (we’ll build this next) -->
+    <link rel="stylesheet" href="../assets/css/projects/us-housing.css" />
+
+    <!-- Tableau embed (interactive tooltips) -->
+    <script src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYCBC5MYN1");
+    </script>
+  </head>
+
+  <body>
+    <!-- HEADER (same as your main site) -->
+    <header id="header">
+      <nav class="nav">
+        <a href="../index.html#hero" class="brand" aria-label="Go to Home"
+          >Julia Fliorko</a
+        >
+
+        <div class="nav-center">
+          <a href="../index.html#hero" class="nav-link">Home</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="project-page" id="top">
+      <section class="project-hero">
+        <div class="container">
+          <!-- Breadcrumbs -->
+          <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+            <a href="../index.html#portfolio">Portfolio</a>
+            <span class="crumb-sep">›</span>
+            <span aria-current="page">U.S. Housing Market Analysis</span>
+          </nav>
+
+          <div class="project-hero-grid">
+            <!-- Left: Hero card -->
+            <div class="project-hero-card">
+              <div class="project-hero-media" aria-hidden="true">
+                <img src="../assets/images/us-housing.webp" alt="" />
+              </div>
+
+              <div class="project-hero-content">
+                <h1 class="project-title">U.S. Housing Market Analysis</h1>
+                <div class="project-subtitle">
+                  <p>
+                    What drives home prices across America — quantified across
+                    <strong>2.2M+ listings</strong> with
+                    <strong>Python analytics</strong> +
+                    <strong>Tableau storytelling</strong>.
+                  </p>
+                  <p>
+                    The raw dataset was chaotic: missingness across key fields,
+                    wild outliers (think impossible beds/baths and massive
+                    lots), and inconsistent granularity by city/state.
+                  </p>
+                  <p>
+                    I stabilized it with a real cleaning pipeline: datatype
+                    fixes, livability constraints, IQR-based outlier filtering,
+                    minimum city sample thresholds, and a full U.S.-only scope
+                    with engineered regional groupings.
+                  </p>
+                  <p>
+                    Net result: a high-signal dataset built for decision-grade
+                    insights — shipped as an interactive Tableau story for fast
+                    exploration.
+                  </p>
+                </div>
+
+                <div class="project-chips" aria-label="Project tags">
+                  <span class="chip pill">Python</span>
+                  <span class="chip pill">Tableau</span>
+                  <span class="chip pill">BEA API</span>
+                  <span class="chip pill">2.2M listings</span>
+                </div>
+
+                <div class="project-cta">
+                  <a
+                    class="btn btn-primary"
+                    href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/Story_17629093650820/WhatMakesHousePrice"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span class="btn-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z"/>
+                      </svg>
+                    </span>
+                    <span class="btn-text">View Interactive Tableau Story</span>
+                  </a>
+                  <a
+                    class="btn btn-ghost"
+                    href="https://github.com/Julia-Fliorko/US-Housing-Market-Prediction"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span class="btn-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.8c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.47-2.47-.28-5.07-1.23-5.07-5.48 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.02 1.14a10.4 10.4 0 0 1 5.5 0c2.1-1.44 3.02-1.14 3.02-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.26-2.6 5.2-5.08 5.47.39.34.74 1.02.74 2.06v3.05c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/>
+                      </svg>
+                    </span>
+                    <span class="btn-text">View GitHub Repo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Overview card -->
+            <aside class="project-overview" aria-label="Project overview">
+              <div class="overview-head">
+                <span class="overview-emoji" aria-hidden="true">🏡</span>
+                <h2 class="overview-title">Project Overview</h2>
+              </div>
+
+              <div class="overview-block">
+                <h3 class="overview-h3">Key Questions</h3>
+                <ul class="overview-list">
+                  <li>
+                    How do home size, bedrooms, and bathrooms influence price?
+                  </li>
+                  <li>
+                    Which regions and states are most vs least affordable?
+                  </li>
+                  <li>
+                    Does Texas population growth align with long-term price
+                    increases?
+                  </li>
+                  <li>
+                    Can we segment the market into affordability tiers using
+                    clustering?
+                  </li>
+                  <li>
+                    How much of price variation can we explain statistically?
+                  </li>
+                </ul>
+              </div>
+
+              <div class="overview-divider" aria-hidden="true"></div>
+
+              <div class="overview-block">
+                <h3 class="overview-h3">Quick Facts</h3>
+                <ul class="overview-list">
+                  <li>
+                    <strong>2.2M+</strong> U.S. listings analyzed (2023
+                    snapshot)
+                  </li>
+                  <li>
+                    <strong>BEA</strong> population data (1969–2023) for U.S. +
+                    Texas
+                  </li>
+                  <li>
+                    <strong>Core models:</strong> Linear Regression (R² ≈ 0.40)
+                    + K-Means (k=3)
+                  </li>
+                </ul>
+              </div>
+
+              <div class="overview-links">
+                <a
+                  class="overview-link"
+                  href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/Story_17629093650820/WhatMakesHousePrice"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Tableau Story</a
+                >
+                <span class="overview-sep">·</span>
+                <a
+                  class="overview-link"
+                  href="https://github.com/Julia-Fliorko/US-Housing-Market-Prediction"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <span class="overview-sep">·</span>
+                <a
+                  class="overview-link"
+                  href="REPLACE_WITH_REPORT_PDF_URL"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Report (PDF)</a
+                >
+              </div>
+            </aside>
+          </div>
+
+          <!-- Section tabs -->
+          <nav class="project-tabs" aria-label="Project sections">
+            <a class="tab is-active" href="#problem">Problem</a>
+            <a class="tab" href="#dataset">Dataset</a>
+            <a class="tab" href="#approach">Approach</a>
+            <a class="tab" href="#results">Results</a>
+            <a class="tab" href="#tools">Tools</a>
+            <a class="tab" href="#visualizations">Visualizations</a>
+            <a class="tab" href="#takeaways">Takeaways</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="project-section" id="problem">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Problem</h2>
+            <p>
+              Housing prices in the U.S. don’t just vary — they fracture. The
+              affordability gap across regions raises real questions for buyers,
+              investors, and policy stakeholders.
+            </p>
+            <p>
+              This project turns that chaos into measurable drivers by
+              connecting property features (size, beds, baths, lot size) with
+              geography and population trends to explain why markets behave so
+              differently.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dataset -->
+      <section class="project-section" id="dataset">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Dataset</h2>
+
+            <div class="two-col">
+              <div class="col">
+                <h3 class="section-h3">Primary Dataset</h3>
+                <p>
+                  <strong>U.S. Real Estate Listings (2023 snapshot)</strong> —
+                  2.2M+ records.
+                </p>
+                <p>
+                  Includes price + property attributes (size, bedrooms,
+                  bathrooms, lot size).
+                </p>
+              </div>
+
+              <div class="col">
+                <h3 class="section-h3">External Dataset</h3>
+                <p>
+                  <strong>BEA API</strong> — U.S. &amp; Texas population time
+                  series (1969–2023).
+                </p>
+                <p>
+                  Why it matters: it lets the analysis go beyond “prices are
+                  high here” into “prices are high here because…”.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approach -->
+      <section class="project-section" id="approach">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Approach</h2>
+
+            <div class="step-list">
+              <div class="step">
+                <h3 class="step-title">1) Data Wrangling</h3>
+                <p>
+                  Cleaned and validated listings at scale (types, missingness,
+                  duplicates, sanity checks).
+                </p>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">2) EDA + Feature Relationships</h3>
+                <p>
+                  Computed correlations and compared patterns by region/state.
+                  Result: home size consistently dominates as the most
+                  informative numeric driver.
+                </p>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">3) Modeling</h3>
+                <ul>
+                  <li>
+                    <strong>Linear Regression:</strong> price ~ house_size
+                    (log-transformed for normalization) →
+                    <strong>R² ≈ 0.40</strong>
+                  </li>
+                  <li>
+                    <strong>K-Means clustering:</strong> standardized price +
+                    size, elbow method → <strong>k=3 tiers</strong>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">4) Time Series (Texas Deep Dive)</h3>
+                <p>
+                  Paired Texas housing metrics with BEA population trends to
+                  show the growth narrative.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="project-section" id="results">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Results</h2>
+
+            <ul class="bullets">
+              <li>
+                <strong>Size</strong> is the strongest predictor (r ≈ 0.41
+                nationally).
+              </li>
+              <li>
+                <strong>Regional signal</strong> is real: correlations appear
+                strongest in South &amp; Midwest.
+              </li>
+              <li>
+                <strong>Regression confirms structure:</strong> R² ≈ 0.40 after
+                log-transforming price.
+              </li>
+              <li>
+                <strong>Clustering finds 3 affordability tiers:</strong>
+                Budget: &lt; $300K · Mid-range: $300K–$600K · Premium: &gt;
+                $700K
+              </li>
+              <li>
+                <strong>Texas case:</strong> population growth aligns with
+                long-term housing price increases; size/baths dominate more
+                strongly in-state.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section class="project-section" id="tools">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Tools</h2>
+
+            <div class="tools-grid">
+              <div class="tool">
+                <h3 class="tool-title">Data Wrangling</h3>
+                <p>pandas, numpy, os</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">EDA &amp; Visualization</h3>
+                <p>matplotlib, seaborn, folium</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Modeling</h3>
+                <p>scikit-learn, statsmodels</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Time Series</h3>
+                <p>statsmodels.tsa, ADF, ACF/PACF</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">API</h3>
+                <p>beaapi, requests, json</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Storytelling</h3>
+                <p>Tableau Public</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualizations -->
+      <section class="project-section" id="visualizations">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Visualizations</h2>
+
+            <p class="section-lead">
+              This project runs on two lanes:
+              <strong>Python = proof</strong> (reproducible analytics) and
+              <strong>Tableau = product</strong> (interactive stakeholder-ready
+              narrative).
+            </p>
+
+            <!-- Tableau embed (interactive tooltips + filters) -->
+            <div class="tableau-block" aria-label="Embedded Tableau story">
+              <div class="tableau-head">
+                <h3 class="section-h3">Interactive Report (Tableau)</h3>
+                <a
+                  class="mini-link"
+                  href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/Story_17629093650820/WhatMakesHousePrice"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Open in Tableau</a
+                >
+              </div>
+
+              <div class="tableau-embed">
+  <div class="tableauPlaceholder" id="vizHousing" style="position:relative;">
+    <noscript>
+      <a href="#">
+        <img
+          alt="What Makes House Price?"
+          src="https://public.tableau.com/static/images/SB/SB98KXB32/1_rss.png"
+          style="border:none;"
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="path" value="shared/SB98KXB32" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/SB/SB98KXB32/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function () {
+    var divElement = document.getElementById("vizHousing");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+
+    function sizeViz() {
+      var w = divElement.parentElement.clientWidth;
+      vizElement.style.width = "100%";
+      vizElement.style.height = Math.round(w * 0.8) + "px"; // tweak 0.7–0.9 to taste
+    }
+
+    sizeViz();
+    window.addEventListener("resize", sizeViz);
+
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  })();
+</script>
+
+            <!-- Evidence snapshots -->
+            <div class="viz-grid">
+              <article class="viz-card">
+                <h3 class="viz-title">Feature Correlation Heatmap</h3>
+                <img
+                  src="../assets/images/viz/feature-correlation-heatmap.webp"
+                  alt="Feature correlation heatmap"
+                />
+                <p class="viz-note">
+                  Snapshot from Python EDA (correlation structure).
+                </p>
+              </article>
+
+              <article class="viz-card">
+                <h3 class="viz-title">Price vs House Size (Regression)</h3>
+                <img
+                  src="../assets/images/viz/regression-scatter.webp"
+                  alt="Regression scatter plot: price vs house size"
+                />
+                <p class="viz-note">
+                  Log-normalized regression view of size → price relationship.
+                </p>
+              </article>
+
+              <article class="viz-card">
+                <h3 class="viz-title">Affordability Tiers (K-Means)</h3>
+                <img
+                  src="../assets/images/viz/clustering-tiers.webp"
+                  alt="K-means clustering: affordability tiers"
+                />
+                <p class="viz-note">
+                  k=3 segments derived from standardized price + size.
+                </p>
+              </article>
+
+              <article class="viz-card">
+                <h3 class="viz-title">Texas Deep Dive (Population Trend)</h3>
+                <img
+                  src="../assets/images/viz/texas-population.webp"
+                  alt="Texas population time series"
+                />
+                <p class="viz-note">
+                  Population growth paired with long-term price narrative.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Takeaways -->
+      <section class="project-section" id="takeaways">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Takeaways</h2>
+
+            <p>
+              This analysis doesn’t just show where homes are expensive — it
+              explains why, quantifies the strongest levers, and packages it
+              into an interactive story that a non-technical stakeholder can
+              actually use.
+            </p>
+
+            <p>
+              If you want a fast read: <strong>size drives price</strong>,
+              <strong>regions reshape the rules</strong>, and markets naturally
+              <strong>segment into tiers</strong> — exactly what you’d need for
+              pricing strategy, risk profiling, or policy planning.
+            </p>
+
+            <div class="takeaway-cta">
+              <a
+                class="btn btn-primary"
+                href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/Story_17629093650820/WhatMakesHousePrice"
+                target="_blank"
+                rel="noreferrer"
+              ><span class="btn-ico" aria-hidden="true">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z"/>
+  </svg>
+</span>
+<span class="btn-text">Explore the Story</span></a>
+              <a
+                class="btn btn-ghost"
+                href="https://github.com/Julia-Fliorko/US-Housing-Market-Prediction"
+                target="_blank"
+                rel="noreferrer"
+              ><span class="btn-ico" aria-hidden="true">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.8c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.47-2.47-.28-5.07-1.23-5.07-5.48 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.02 1.14a10.4 10.4 0 0 1 5.5 0c2.1-1.44 3.02-1.14 3.02-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.26-2.6 5.2-5.08 5.47.39.34.74 1.02.74 2.06v3.05c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/>
+  </svg>
+</span>
+<span class="btn-text">See the Code</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="project-footer">
+        <div class="container">
+          <a class="mini-link" href="#top">Back to top</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../assets/js/analytics.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Optional: simple active-tab behavior (no CSS yet, but keeps UX clean) -->
+    <script>
+      const tabs = Array.from(document.querySelectorAll(".project-tabs .tab"));
+      const sections = tabs
+        .map((t) => document.querySelector(t.getAttribute("href")))
+        .filter(Boolean);
+
+      const setActive = (id) => {
+        tabs.forEach((t) =>
+          t.classList.toggle("is-active", t.getAttribute("href") === "#" + id),
+        );
+      };
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) setActive(e.target.id);
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
+      );
+
+      sections.forEach((s) => obs.observe(s));
+    </script>
+  </body>
+</html>
