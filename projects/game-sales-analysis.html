@@ -1,0 +1,352 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Sales Analysis | Julia Fliorko</title>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/projects/game-sales-analysis.css" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-DYCBC5MYN1");
+  </script>
+</head>
+
+<body>
+  <header id="header">
+    <nav class="nav">
+      <a href="../index.html#hero" class="brand" aria-label="Go to Home">Julia Fliorko</a>
+
+      <div class="nav-center">
+        <a href="../index.html#hero" class="nav-link">Home</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="project-page" id="top">
+    <section class="project-hero">
+      <div class="container">
+        <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html#portfolio">Portfolio</a>
+          <span class="crumb-sep">›</span>
+          <span aria-current="page">Game Sales Analysis</span>
+        </nav>
+
+        <div class="project-hero-grid">
+          <div class="project-hero-card">
+            <div class="project-hero-media" aria-hidden="true">
+              <img src="../assets/images/game-sales.webp" alt="" />
+            </div>
+
+            <div class="project-hero-content">
+              <h1 class="project-title">Game Sales Analysis</h1>
+
+              <div class="project-subtitle">
+                <p>
+                  This project analyzes historical video game sales to surface market structure, platform lifecycle dynamics,
+                  genre performance, and regional demand differences. The goal is to convert raw sales records into
+                  decision-ready insights for portfolio planning and market prioritization.
+                </p>
+                <p>
+                  The entire workflow is executed in <strong>Excel</strong>, using structured cleaning, pivot-based analysis,
+                  and calculated metrics to create a consistent analytical narrative.
+                </p>
+              </div>
+
+              <div class="project-chips" aria-label="Project highlights">
+                <span class="chip pill">Excel</span>
+                <span class="chip pill">Data Cleaning</span>
+                <span class="chip pill">Pivot Tables</span>
+                <span class="chip pill">Calculated Fields</span>
+                <span class="chip pill">Ranking</span>
+                <span class="chip pill">Segmentation</span>
+                <span class="chip pill">Market Insights</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="project-overview" aria-label="Project overview">
+            <div class="overview-head">
+              <span class="overview-emoji" aria-hidden="true">🎮</span>
+              <h2 class="overview-title">Project Overview</h2>
+            </div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Business Questions</h3>
+              <ul class="overview-list">
+                <li>How are sales distributed across regions, and what does that imply for market focus?</li>
+                <li>Which platforms drive the most sales, and how does performance evolve over time?</li>
+                <li>Which genres lead globally, and where do regional preferences diverge?</li>
+                <li>How concentrated is publisher success, and what does market power look like?</li>
+                <li>What long-term trends are visible, and what structural factors may explain them?</li>
+              </ul>
+            </div>
+
+            <div class="overview-divider" aria-hidden="true"></div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Quick Facts</h3>
+              <ul class="overview-list">
+                <li><strong>Method:</strong> Excel analytics (cleaning, pivots, calculated metrics, ranking logic)</li>
+                <li><strong>Output:</strong> structured tables + market segmentation + trend summaries</li>
+                <li><strong>Delivery:</strong> recruiter-facing insights documented directly on this page</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <nav class="project-tabs" aria-label="Project sections">
+          <a class="tab is-active" href="#problem">Problem</a>
+          <a class="tab" href="#dataset">Dataset</a>
+          <a class="tab" href="#approach">Approach</a>
+          <a class="tab" href="#findings">Findings</a>
+          <a class="tab" href="#tools">Tools</a>
+          <a class="tab" href="#takeaways">Takeaways</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="project-section" id="problem">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Problem</h2>
+          <p>
+            Video game sales performance is influenced by region-specific demand, platform lifecycle stages, genre fit,
+            and publisher market power. Without structured analysis, it is easy to misinterpret global aggregates,
+            overestimate broad demand for a genre, or miss platform timing effects.
+          </p>
+          <p>
+            This project reframes sales history into actionable market signals by separating results across
+            <strong>platform</strong>, <strong>genre</strong>, <strong>publisher</strong>, and <strong>region</strong>, while
+            also tracking how these relationships change over time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="dataset">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Dataset</h2>
+
+          <div class="two-col">
+            <div class="col">
+              <h3 class="section-h3">Structure</h3>
+              <p>
+                The dataset contains sales records at the game level, including <strong>platform</strong>, <strong>genre</strong>,
+                <strong>publisher</strong>, <strong>release year</strong>, and regional sales across <strong>North America</strong>,
+                <strong>Europe</strong>, <strong>Japan</strong>, and <strong>Other</strong>, plus total <strong>Global Sales</strong>.
+              </p>
+              <p>
+                This structure supports segmentation, ranking, and cross-region comparison without requiring external joins.
+              </p>
+            </div>
+
+            <div class="col">
+              <h3 class="section-h3">Preparation</h3>
+              <p>
+                Data was standardized to support consistent aggregation and trend analysis. Records with missing or
+                non-informative attributes were handled to avoid distortion in platform and regional comparisons.
+              </p>
+              <p>
+                Regional totals were validated against global values to ensure arithmetic consistency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="approach">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Approach</h2>
+
+          <div class="step-list">
+            <div class="step">
+              <h3 class="step-title">1) Data Cleaning and Standardization</h3>
+              <p>
+                Cleaned categorical fields (platform, genre, publisher) and normalized year and sales columns to enable
+                reliable pivoting and comparisons.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">2) Pivot-Based Market Segmentation</h3>
+              <p>
+                Built pivot views by region, platform, genre, and publisher to isolate performance drivers and prevent
+                global aggregates from masking regional variance.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">3) Ranking and Concentration Analysis</h3>
+              <p>
+                Ranked top platforms, genres, and publishers by sales and evaluated concentration effects to understand
+                how much of the market is captured by a small set of leaders.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">4) Trend and Lifecycle Interpretation</h3>
+              <p>
+                Compared year-over-year patterns to highlight platform lifecycle timing and long-term shifts in the sales
+                landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="findings">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Key Findings</h2>
+
+          <h3 class="section-h3">1) Regional Sales Concentration</h3>
+          <p>
+            Global sales are dominated by <strong>North America</strong> and <strong>Europe</strong>, which collectively account
+            for most revenue. <strong>Japan</strong> is smaller in total volume but structurally distinct, with different
+            genre and platform preferences relative to Western regions.
+          </p>
+
+          <h3 class="section-h3">2) Platform Lifecycle Effects</h3>
+          <p>
+            Platform performance follows predictable lifecycle dynamics: sales tend to peak during periods of broad adoption
+            and decline as platforms age. Strong genres do not fully offset late-lifecycle slowdowns.
+          </p>
+
+          <h3 class="section-h3">3) Genre Performance is Region-Dependent</h3>
+          <p>
+            While mass-market genres tend to lead globally, regional segmentation reveals meaningful deviations:
+            Japan’s distribution differs from Western markets, indicating that genre strategy should be adapted per region
+            rather than optimized only for global totals.
+          </p>
+
+          <h3 class="section-h3">4) Publisher Market Power</h3>
+          <p>
+            Sales are highly concentrated among a small set of publishers. Leadership is sustained through repeated
+            high-performing releases, while the long tail contributes marginally on an individual basis.
+          </p>
+
+          <h3 class="section-h3">5) Long-Term Trend Requires Context</h3>
+          <p>
+            Total sales show a visible historical peak followed by decline. This pattern is consistent with market
+            transitions and industry transformation rather than indicating a single-region demand shock.
+          </p>
+
+          <div class="overview-divider" aria-hidden="true"></div>
+
+          <h3 class="section-h3">Implications</h3>
+          <ul class="bullets">
+            <li><strong>Prioritize by region:</strong> global aggregates hide regional preference structure.</li>
+            <li><strong>Time platform bets:</strong> lifecycle stage is a dominant factor in sales outcomes.</li>
+            <li><strong>Localize genre strategy:</strong> genre leadership differs across markets.</li>
+            <li><strong>Account for concentration:</strong> publisher success is skewed and persistent.</li>
+            <li><strong>Interpret trends carefully:</strong> shifts often reflect structural transformation, not demand collapse.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="tools">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Tools</h2>
+
+          <div class="tools-grid">
+            <div class="tool">
+              <h3 class="tool-title">Excel</h3>
+              <p>Cleaning, pivot tables, calculated metrics, ranking, segmentation</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Analysis Techniques</h3>
+              <p>Market segmentation, concentration checks, lifecycle trend interpretation</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Outputs</h3>
+              <p>Structured pivot views + summarized insights documented on-page</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Quality Checks</h3>
+              <p>Consistency validation across regional totals and global values</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Stakeholder Lens</h3>
+              <p>Portfolio planning, market prioritization, platform timing strategy</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Delivery</h3>
+              <p>Recruiter-readable narrative with explicit findings and implications</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="takeaways">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Takeaways</h2>
+          <p>
+            This project demonstrates Excel-driven analytics that converts raw sales records into structured market insights.
+            By separating performance across region, platform, genre, and publisher—and interpreting changes over time—the
+            analysis produces decision-ready signals without relying on code or external tools.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="project-footer">
+      <div class="container">
+        <a class="mini-link" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/analytics.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll(".project-tabs .tab"));
+    const sections = tabs
+      .map((t) => document.querySelector(t.getAttribute("href")))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      tabs.forEach((t) =>
+        t.classList.toggle("is-active", t.getAttribute("href") === "#" + id),
+      );
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
+    );
+
+    sections.forEach((s) => obs.observe(s));
+  </script>
+</body>
+
+</html>
