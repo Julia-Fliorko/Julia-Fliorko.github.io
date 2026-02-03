@@ -460,14 +460,18 @@
 }
 
 /* Some browsers still get a 1–2px overflow from rounding */
+html, body{ overflow-x: hidden; }
+
+/* Avoid clipping card shadows/blur; contain overflow only where needed (Tableau) */
 .project-page,
 .project-page .container,
 .project-page .section-card{
-  overflow-x: clip;
+  overflow: visible;
 }
 
-html, body{
-  overflow-x: hidden;
+.tableau-block,
+.tableau-embed{
+  overflow: hidden;
 }
 
 /* Optional: evidence image cards */
@@ -543,6 +547,19 @@ html, body{
   .viz-grid{ grid-template-columns: 1fr; }
 
   .project-hero-media{ height: 190px; }
+
+  .project-page .container{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .project-hero-card,
+  .project-overview,
+  .section-card,
+  .tableau-block{
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce){
