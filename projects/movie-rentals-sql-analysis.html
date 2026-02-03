@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Rentals SQL Analysis | Julia Fliorko</title>
+
+  <!-- Global site CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <!-- Project-specific CSS -->
+  <link rel="stylesheet" href="../assets/css/projects/movie-rentals-sql-analysis.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-DYCBC5MYN1");
+  </script>
+  <!-- Prevent page-level horizontal scroll from rounding issues -->
+  <style>
+    html, body { overflow-x: hidden; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <nav class="nav">
+      <a href="../index.html#hero" class="brand" aria-label="Go to Home">Julia Fliorko</a>
+
+      <div class="nav-center">
+        <a href="../index.html#hero" class="nav-link">Home</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="project-page" id="top">
+    <section class="project-hero">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html#portfolio">Portfolio</a>
+          <span class="crumb-sep">›</span>
+          <span aria-current="page">Movie Rentals SQL Analysis</span>
+        </nav>
+
+        <div class="project-hero-grid">
+          <!-- Left: Hero card -->
+          <div class="project-hero-card">
+            <div class="project-hero-media" aria-hidden="true">
+              <img src="../assets/images/movie-rentals.webp" alt="" />
+            </div>
+
+            <div class="project-hero-content">
+              <h1 class="project-title">Movie Rentals SQL Analysis</h1>
+
+              <div class="project-subtitle">
+                <p>
+                  This project uses SQL to identify <strong>revenue drivers</strong> and assess
+                  <strong>inventory utilization</strong> for a movie rental business. The goal is to support
+                  decisions around market focus, customer segments, and catalog optimization.
+                </p>
+
+                <p>
+                  The workflow includes data exploration, query-based metrics, and stakeholder-ready reporting.
+                  Results are presented in an interactive Tableau dashboard.
+                </p>
+              </div>
+
+              <!-- CTAs (NO CHIPS) -->
+              <div class="project-cta">
+                <a class="btn btn-primary"
+                  href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis"
+                  target="_blank" rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">Tableau Dashboard</span>
+                </a>
+
+                <a class="btn btn-ghost"
+                  href="https://docs.google.com/document/d/1NLvqYskLSph54Aznm_q2sA6EWKXf3O5Xy9nrm6njPXk/edit?usp=sharing"
+                  target="_blank" rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">Google Sheets</span>
+                </a>
+
+                <a class="btn btn-ghost" href="../assets/docs/rockbuster-data-dictionary.pdf" target="_blank"
+                  rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">Data Dictionary</span>
+                </a>
+
+                <a class="btn btn-ghost"
+                  href="https://drive.google.com/file/d/1Mrx-XPqI0vLiW7AvCpN9m0PGJWTU5Qs5/view?usp=sharing"
+                  target="_blank" rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">Report (PDF)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Overview card -->
+          <aside class="project-overview" aria-label="Project overview">
+            <div class="overview-head">
+              <span class="overview-emoji" aria-hidden="true">🎬</span>
+              <h2 class="overview-title">Project Overview</h2>
+            </div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Key Questions</h3>
+              <ul class="overview-list">
+                <li>Which countries and customer groups contribute most revenue?</li>
+                <li>Which titles/categories drive the most rentals?</li>
+                <li>When do rentals peak (day/hour), and how does this relate to spend?</li>
+                <li>Is inventory aligned with demand, or are some titles underutilized?</li>
+              </ul>
+            </div>
+
+            <div class="overview-divider" aria-hidden="true"></div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Quick Facts</h3>
+              <ul class="overview-list">
+                <li><strong>Method:</strong> SQL analysis across customers, rentals, payments, and inventory</li>
+                <li><strong>Output:</strong> KPI tables + dashboard views</li>
+                <li><strong>Delivery:</strong> Tableau dashboard + Excel extracts</li>
+              </ul>
+            </div>
+
+            <div class="overview-links">
+              <a class="overview-link"
+                href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis"
+                target="_blank" rel="noreferrer">Tableau</a>
+              <span class="overview-sep">·</span>
+              <a class="overview-link"
+                href="https://docs.google.com/document/d/1NLvqYskLSph54Aznm_q2sA6EWKXf3O5Xy9nrm6njPXk/edit?usp=sharing"
+                target="_blank" rel="noreferrer">Google Sheets</a>
+              <span class="overview-sep">·</span>
+              <a class="overview-link" href="../assets/docs/rockbuster-data-dictionary.pdf" target="_blank"
+                rel="noreferrer">Data Dictionary</a>
+              <span class="overview-sep">·</span>
+              <a class="overview-link"
+                href="https://drive.google.com/file/d/1Mrx-XPqI0vLiW7AvCpN9m0PGJWTU5Qs5/view?usp=sharing"
+                target="_blank" rel="noreferrer">Report (PDF)</a>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Section tabs -->
+        <nav class="project-tabs" aria-label="Project sections">
+          <a class="tab is-active" href="#problem">Problem</a>
+          <a class="tab" href="#dataset">Dataset</a>
+          <a class="tab" href="#approach">Approach</a>
+          <a class="tab" href="#results">Results</a>
+          <a class="tab" href="#tools">Tools</a>
+          <a class="tab" href="#visualizations">Visualizations</a>
+          <a class="tab" href="#takeaways">Takeaways</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="project-section" id="problem">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Problem</h2>
+          <p>
+            The business needs clarity on what drives revenue and how effectively inventory is being used.
+            This analysis focuses on customer demand patterns, market contribution, and catalog performance.
+          </p>
+          <p>
+            The goal is to translate rental activity into clear metrics that can support decisions about targeting,
+            inventory planning, and customer strategy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset -->
+    <section class="project-section" id="dataset">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Dataset</h2>
+
+          <div class="two-col">
+            <div class="col">
+              <h3 class="section-h3">Source</h3>
+              <p>
+                Relational movie rental database with tables covering customers, rentals, payments, inventory, films,
+                categories, and store locations.
+              </p>
+              <p>
+                Analysis uses joins and aggregations to connect customer activity to revenue and inventory.
+              </p>
+            </div>
+
+            <div class="col">
+              <h3 class="section-h3">Notes</h3>
+              <p>
+                The work relies on consistent keys (customer, rental, inventory, film) and time fields to measure
+                trends and utilization accurately.
+              </p>
+              <p>Outputs are provided as tables for reuse in dashboards and reporting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="project-section" id="approach">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Approach</h2>
+
+          <div class="step-list">
+            <div class="step">
+              <h3 class="step-title">1) Data Familiarization</h3>
+              <p>
+                Reviewed schema and relationships, validated join paths, and identified fields needed for revenue and
+                inventory metrics.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">2) KPI Queries</h3>
+              <p>
+                Built SQL queries for customer counts, revenue contribution, rental volume, and time-based patterns
+                (daily/hourly/weekday).
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">3) Inventory Utilization</h3>
+              <p>
+                Measured rental activity against inventory availability to highlight high-rotation titles and
+                underutilized stock.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">4) Reporting</h3>
+              <p>Exported query outputs for Tableau and Excel and organized results into a dashboard for exploration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="project-section" id="results">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Results</h2>
+
+          <ul class="bullets">
+            <li><strong>Market contribution:</strong> identifies where customers and revenue are concentrated by
+              country.</li>
+            <li><strong>Demand patterns:</strong> highlights rental peaks by day and hour to support operational
+              planning.</li>
+            <li><strong>Catalog performance:</strong> compares rentals across titles/categories to locate key drivers.
+            </li>
+            <li><strong>Utilization:</strong> flags inventory that is over-rotating or underused for optimization.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="project-section" id="tools">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Tools</h2>
+
+          <div class="tools-grid">
+            <div class="tool">
+              <h3 class="tool-title">SQL</h3>
+              <p>PostgreSQL, joins, CTEs, aggregations</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Data Delivery</h3>
+              <p>Excel extracts for reporting</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Visualization</h3>
+              <p>Tableau Public dashboard</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Workflow</h3>
+              <p>SQL scripts + documented outputs</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Focus</h3>
+              <p>Revenue drivers, customer behavior, inventory utilization</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Outputs</h3>
+              <p>KPI tables + interactive dashboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="project-section" id="visualizations">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Visualizations</h2>
+
+          <p class="section-lead">
+            The dashboard consolidates the main outputs: market contribution, rental trends over time, inventory
+            utilization, and demand patterns by weekday and hour.
+          </p>
+
+          <div class="tableau-block" aria-label="Embedded Tableau dashboard">
+  <div class="tableau-head">
+    <h3 class="section-h3">Interactive Dashboard (Tableau)</h3>
+    <a
+      class="mini-link"
+      href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis"
+      target="_blank"
+      rel="noreferrer"
+    >Open in Tableau</a>
+  </div>
+
+  <!-- Tableau embed (responsive to section width, no horizontal scroll) -->
+  <div class="tableau-embed" aria-label="Embedded Tableau dashboard">
+    <div class="tableauPlaceholder" id="vizRockbuster" style="position: relative; width: 100%; max-width: 100%; overflow: hidden;">
+      <noscript>
+        <a href="#">
+          <img
+            alt="Film Rental (Rockbuster Stealth LLC) Analysis"
+            src="https://public.tableau.com/static/images/Fi/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis/1_rss.png"
+            style="border:none;"
+          />
+        </a>
+      </noscript>
+
+      <object class="tableauViz" style="display:none; width:100%; max-width:100%;">
+        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+        <param name="embed_code_version" value="3" />
+        <param name="site_root" value="" />
+        <param
+          name="name"
+          value="FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis"
+        />
+        <param name="tabs" value="no" />
+        <param name="toolbar" value="yes" />
+        <param
+          name="static_image"
+          value="https://public.tableau.com/static/images/Fi/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis/1.png"
+        />
+        <param name="animate_transition" value="yes" />
+        <param name="display_static_image" value="yes" />
+        <param name="display_spinner" value="yes" />
+        <param name="display_overlay" value="yes" />
+        <param name="display_count" value="yes" />
+        <param name="language" value="en-US" />
+      </object>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var divElement = document.getElementById("vizRockbuster");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+
+      function sizeViz() {
+        // Use the available width of the placeholder and keep Tableau inside the card.
+        var w = Math.floor(divElement.clientWidth);
+        if (!w || w < 320) return;
+
+        // Let Tableau fill the container width (prevents horizontal overflow)
+        vizElement.style.width = "100%";
+
+        // Maintain the original viz aspect ratio: 1200 x 991
+        vizElement.style.height = Math.round(w * (991 / 1200)) + "px";
+
+        // Extra safety: clamp any injected iframe/object to the container width
+        vizElement.style.maxWidth = "100%";
+      }
+
+      sizeViz();
+      window.addEventListener("resize", sizeViz);
+
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    })();
+  </script>
+</div>
+
+            <div class="overview-divider" aria-hidden="true"></div>
+
+            <h3 class="section-h3">Dashboard Sections</h3>
+            <ul class="bullets">
+              <li><strong>Revenue and Customers by Country:</strong> where the customer base and profit are concentrated
+              </li>
+              <li><strong>Rental Trends Over Time:</strong> daily and monthly demand patterns</li>
+              <li><strong>Inventory Utilization:</strong> how demand aligns with available stock</li>
+              <li><strong>Rentals vs Spend by Hour:</strong> peak usage and value windows</li>
+              <li><strong>Rentals by Weekday:</strong> weekly rhythm for staffing and promotions</li>
+            </ul>
+          </div>
+        </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="project-section" id="takeaways">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Takeaways</h2>
+
+          <p>
+            This project demonstrates SQL-based analytics from a relational schema. The outputs are designed to be
+            reusable:
+            the same queries can feed reporting, monitoring, or deeper segmentation work.
+          </p>
+
+          <div class="takeaway-cta">
+            <a class="btn btn-primary"
+              href="https://public.tableau.com/app/profile/yuliia.fliorko/viz/FilmRentalAnalysisRockbusterStealthLLC/FilmRentalRockbusterStealthLLCAnalysis"
+              target="_blank" rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z" />
+                </svg>
+              </span>
+              <span class="btn-text">Open the Dashboard</span>
+            </a>
+
+            <a class="btn btn-ghost"
+              href="https://docs.google.com/document/d/1NLvqYskLSph54Aznm_q2sA6EWKXf3O5Xy9nrm6njPXk/edit?usp=sharing"
+              target="_blank" rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                </svg>
+              </span>
+              <span class="btn-text">Open Google Sheets</span>
+            </a>
+
+            <a class="btn btn-ghost" href="../assets/docs/rockbuster-data-dictionary.pdf" target="_blank"
+              rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                </svg>
+              </span>
+              <span class="btn-text">Data Dictionary</span>
+            </a>
+
+            <a class="btn btn-ghost"
+              href="https://drive.google.com/file/d/1Mrx-XPqI0vLiW7AvCpN9m0PGJWTU5Qs5/view?usp=sharing" target="_blank"
+              rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 2h9l3 3v17H6V2Zm9 1.5V6h2.5L15 3.5ZM8 9h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
+                </svg>
+              </span>
+              <span class="btn-text">Report (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="project-footer">
+      <div class="container">
+        <a class="mini-link" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/analytics.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Active-tab behavior -->
+  <script>
+    const tabs = Array.from(document.querySelectorAll(".project-tabs .tab"));
+    const sections = tabs
+      .map((t) => document.querySelector(t.getAttribute("href")))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      tabs.forEach((t) =>
+        t.classList.toggle("is-active", t.getAttribute("href") === "#" + id),
+      );
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
+    );
+
+    sections.forEach((s) => obs.observe(s));
+  </script>
+</body>
+
+</html>
