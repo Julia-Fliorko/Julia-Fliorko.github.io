@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influenza Staffing Forecast | Julia Fliorko</title>
+
+    <!-- Global site CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Project-specific CSS (create this later if you want custom styling) -->
+    <link
+      rel="stylesheet"
+      href="../assets/css/projects/influenza-staffing-forecast.css"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DYCBC5MYN1");
+    </script>
+
+    <!-- Prevent page-level horizontal scroll (Tableau + rounding issues) -->
+    <style>
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      /* Hard safety net for embeds */
+      .tableau-block,
+      .tableau-embed,
+      .tableauPlaceholder,
+      .tableauViz,
+      .tableauViz iframe,
+      .tableauViz object {
+        max-width: 100%;
+      }
+
+      .tableau-block {
+        overflow: hidden;
+      }
+
+      .tableau-embed {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .tableauPlaceholder {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <nav class="nav">
+        <a href="../index.html#hero" class="brand" aria-label="Go to Home"
+          >Julia Fliorko</a
+        >
+
+        <div class="nav-center">
+          <a href="../index.html#hero" class="nav-link">Home</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="project-page" id="top">
+      <section class="project-hero">
+        <div class="container">
+          <!-- Breadcrumbs -->
+          <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+            <a href="../index.html#portfolio">Portfolio</a>
+            <span class="crumb-sep">›</span>
+            <span aria-current="page">Influenza Staffing Forecast</span>
+          </nav>
+
+          <div class="project-hero-grid">
+            <!-- Left: Hero card -->
+            <div class="project-hero-card">
+              <div class="project-hero-media" aria-hidden="true">
+                <!-- TODO: replace with your project hero image -->
+                <img src="../assets/images/influenza.webp" alt="" />
+              </div>
+
+              <div class="project-hero-content">
+                <h1 class="project-title">Influenza Staffing Forecast</h1>
+
+                <div class="project-subtitle">
+                  <p>
+                    This project turns influenza mortality trends into staffing
+                    intelligence for healthcare planning. The objective is to
+                    identify <strong>when and where demand spikes</strong>, so
+                    medical teams can be scheduled proactively instead of
+                    reacting mid-season.
+                  </p>
+
+                  <p>
+                    Using Excel-based analysis and Tableau delivery, the
+                    workflow translates raw time patterns into stakeholder-ready
+                    signals—peak timing, geographic variability, and
+                    vulnerability prioritization—to support policy and resource
+                    allocation.
+                  </p>
+                </div>
+
+                <div class="project-chips" aria-label="Project highlights">
+                  <span class="chip pill">Excel</span>
+                  <span class="chip pill">Pivot Tables</span>
+                  <span class="chip pill">Peak-Month Detection</span>
+                  <span class="chip pill">Ranking Logic</span>
+                  <span class="chip pill">Seasonality</span>
+                  <span class="chip pill">Tableau Story</span>
+                  <span class="chip pill">Policy & Resource Allocation</span>
+
+                  <a
+                    class="btn btn-primary"
+                    href="https://public.tableau.com/views/2_2_93/Story"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span class="btn-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="btn-text">Tableau Dashboard</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Overview card -->
+            <aside class="project-overview" aria-label="Project overview">
+              <div class="overview-head">
+                <span class="overview-emoji" aria-hidden="true">🦠</span>
+                <h2 class="overview-title">Project Overview</h2>
+              </div>
+
+              <div class="overview-block">
+                <h3 class="overview-h3">Key Questions</h3>
+                <ul class="overview-list">
+                  <li>
+                    When do influenza deaths peak, and how consistent is peak
+                    timing across years?
+                  </li>
+                  <li>
+                    Which states show stable seasonal peaks vs. unpredictable
+                    fluctuations?
+                  </li>
+                  <li>
+                    Which population segments face the highest burden, and how
+                    should that affect staffing plans?
+                  </li>
+                  <li>
+                    How can limited staff be allocated efficiently across
+                    locations and time windows?
+                  </li>
+                </ul>
+              </div>
+
+              <div class="overview-divider" aria-hidden="true"></div>
+
+              <div class="overview-block">
+                <h3 class="overview-h3">Quick Facts</h3>
+                <ul class="overview-list">
+                  <li>
+                    <strong>Method:</strong> Excel analytics (trend profiling,
+                    peak-month detection, ranking logic)
+                  </li>
+                  <li>
+                    <strong>Output:</strong> KPI tables + peak-month map +
+                    prioritization views
+                  </li>
+                  <li>
+                    <strong>Delivery:</strong> Tableau dashboard + Excel
+                    extracts
+                  </li>
+                </ul>
+              </div>
+
+              <div class="overview-links">
+                <a
+                  class="overview-link"
+                  href="https://public.tableau.com/views/2_2_93/Story"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Tableau</a
+                >
+              </div>
+            </aside>
+          </div>
+
+          <!-- Section tabs -->
+          <nav class="project-tabs" aria-label="Project sections">
+            <a class="tab is-active" href="#problem">Problem</a>
+            <a class="tab" href="#dataset">Dataset</a>
+            <a class="tab" href="#approach">Approach</a>
+            <a class="tab" href="#results">Results</a>
+            <a class="tab" href="#tools">Tools</a>
+            <a class="tab" href="#visualizations">Visualizations</a>
+            <a class="tab" href="#takeaways">Takeaways</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="project-section" id="problem">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Problem</h2>
+            <p>
+              Healthcare staffing decisions often rely on a generic “flu season”
+              assumption, but influenza burden varies by
+              <strong>state, timing, and population vulnerability</strong>. That
+              misalignment creates operational risk: staffing arrives too late
+              in early-peak regions and gets over-allocated where peaks are
+              milder or inconsistent.
+            </p>
+            <p>
+              This project converts influenza mortality patterns into
+              decision-ready metrics so stakeholders can plan staffing based on
+              <strong>peak windows</strong>,
+              <strong>regional variation</strong>, and
+              <strong>priority need</strong>—not guesswork.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dataset -->
+      <section class="project-section" id="dataset">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Dataset</h2>
+
+            <div class="two-col">
+              <div class="col">
+                <h3 class="section-h3">Source</h3>
+                <p>
+                  Influenza mortality and population data structured by
+                  <strong>state, month, and year</strong>, with demographic
+                  breakdowns used to assess differential burden across groups.
+                </p>
+                <p>
+                  The dataset supports month-over-month comparisons and
+                  year-over-year consistency checks.
+                </p>
+              </div>
+
+              <div class="col">
+                <h3 class="section-h3">Notes</h3>
+                <p>
+                  Outputs are formatted as reusable Excel tables that feed
+                  directly into Tableau for stakeholder review. Standardized
+                  state/time fields enable consistent aggregation and peak
+                  detection.
+                </p>
+                <p>
+                  The analysis focuses on policy and resource allocation
+                  use-cases, not exploratory “dashboard-only” visuals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approach -->
+      <section class="project-section" id="approach">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Approach</h2>
+
+            <div class="step-list">
+              <div class="step">
+                <h3 class="step-title">1) Data Preparation (Excel)</h3>
+                <p>
+                  Cleaned and standardized fields for state and time
+                  (month/year). Validated totals and built analysis-ready tables
+                  to support pivoting, aggregation, and consistent comparisons.
+                </p>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">2) Peak Detection</h3>
+                <p>
+                  Identified peak months per state (and per year when
+                  applicable), then summarized across years to determine each
+                  state’s most common peak month and how stable that pattern is.
+                </p>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">3) Prioritization Logic</h3>
+                <p>
+                  Created ranking and tiering logic (low/medium/high need) to
+                  support staffing decisions when resources are constrained—so
+                  allocation is defensible and consistent.
+                </p>
+              </div>
+
+              <div class="step">
+                <h3 class="step-title">4) Stakeholder Delivery</h3>
+                <p>
+                  Packaged outputs into Tableau views designed for fast
+                  decision-making: geographic peak timing, trend context, and
+                  prioritization signals in one place.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="project-section" id="results">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Results</h2>
+
+            <ul class="bullets">
+              <li>
+                <strong>Peak timing varies by state:</strong> a single national
+                timeline hides meaningful regional differences and can lead to
+                staffing misalignment.
+              </li>
+              <li>
+                <strong>Predictability differs across locations:</strong> stable
+                patterns support scheduling, while volatile patterns require
+                contingency planning.
+              </li>
+              <li>
+                <strong>Prioritization needs more than timing:</strong> staffing
+                decisions should reflect both peak windows and relative
+                burden/vulnerability.
+              </li>
+              <li>
+                <strong>Decision-ready outputs:</strong> tables and visuals
+                provide measurable justification for staffing and allocation
+                discussions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section class="project-section" id="tools">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Tools</h2>
+
+            <div class="tools-grid">
+              <div class="tool">
+                <h3 class="tool-title">Excel</h3>
+                <p>
+                  Data cleaning, pivot tables, calculated fields, ranking logic
+                </p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Analysis Focus</h3>
+                <p>Seasonality, peak-month detection, prioritization tiers</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Visualization</h3>
+                <p>Tableau dashboard for stakeholder exploration</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Outputs</h3>
+                <p>Reusable Excel extracts + documented assumptions</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Stakeholders</h3>
+                <p>Staffing planners, operations, policy/resource allocation</p>
+              </div>
+
+              <div class="tool">
+                <h3 class="tool-title">Delivery</h3>
+                <p>Interactive story + planning-ready KPI tables</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualizations -->
+      <section class="project-section" id="visualizations">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Visualizations</h2>
+
+            <p class="section-lead">
+              The dashboard consolidates staffing signals into three layers:
+              when peaks occur, where burden concentrates, and which
+              states/populations should be prioritized. It’s structured for
+              planning conversations around staffing windows and resource
+              allocation.
+            </p>
+
+            <div class="tableau-block" aria-label="Embedded Tableau dashboard">
+              <div class="tableau-head">
+                <h3 class="section-h3">Interactive Dashboard (Tableau)</h3>
+                <a
+                  class="mini-link"
+                  href="https://public.tableau.com/views/2_2_93/Story"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Open in Tableau</a
+                >
+              </div>
+
+              <!-- Tableau embed (responsive, no horizontal scroll) -->
+              <div
+                class="tableau-embed"
+                aria-label="Embedded Tableau dashboard"
+              >
+                <div
+                  class="tableauPlaceholder"
+                  id="viz1770150121561"
+                  style="position: relative"
+                >
+                  <noscript>
+                    <a href="#">
+                      <img
+                        alt="Preparing for influenza season in US."
+                        src="https://public.tableau.com/static/images/2_/2_2_93/Story/1_rss.png"
+                        style="border: none"
+                      />
+                    </a>
+                  </noscript>
+                  <object class="tableauViz" style="display: none">
+                    <param
+                      name="host_url"
+                      value="https%3A%2F%2Fpublic.tableau.com%2F"
+                    />
+                    <param name="embed_code_version" value="3" />
+                    <param name="site_root" value="" />
+                    <param name="name" value="2_2_93/Story" />
+                    <param name="tabs" value="no" />
+                    <param name="toolbar" value="yes" />
+                    <param
+                      name="static_image"
+                      value="https://public.tableau.com/static/images/2_/2_2_93/Story/1.png"
+                    />
+                    <param name="animate_transition" value="yes" />
+                    <param name="display_static_image" value="yes" />
+                    <param name="display_spinner" value="yes" />
+                    <param name="display_overlay" value="yes" />
+                    <param name="display_count" value="yes" />
+                    <param name="language" value="en-US" />
+                  </object>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+                (function () {
+                  var divElement = document.getElementById("viz1770150121561");
+                  var vizElement = divElement.getElementsByTagName("object")[0];
+
+                  function sizeViz() {
+                    // Use the placeholder's real width and keep it inside the section card
+                    var w = Math.floor(
+                      divElement.getBoundingClientRect().width,
+                    );
+                    if (!w || w < 320) return;
+
+                    vizElement.style.width = "100%";
+                    // Tableau's default ratio used in your embed script
+                    vizElement.style.height = Math.round(w * 0.75) + "px";
+                    vizElement.style.maxWidth = "100%";
+                  }
+
+                  sizeViz();
+                  window.addEventListener("resize", sizeViz);
+
+                  var scriptElement = document.createElement("script");
+                  scriptElement.src =
+                    "https://public.tableau.com/javascripts/api/viz_v1.js";
+                  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                })();
+              </script>
+
+              <div class="overview-divider" aria-hidden="true"></div>
+
+              <h3 class="section-h3">Dashboard Sections</h3>
+              <ul class="bullets">
+                <li>
+                  <strong>Peak Month by State:</strong> choropleth colored by
+                  each state’s most common peak month (filterable by year if
+                  available)
+                </li>
+                <li>
+                  <strong>Mortality Trends:</strong> monthly and yearly patterns
+                  to contextualize peak windows
+                </li>
+                <li>
+                  <strong>Priority Tiers:</strong> low/medium/high need grouping
+                  to support staff allocation
+                </li>
+                <li>
+                  <strong>Demographic Burden View:</strong> highlights which
+                  groups drive risk and where staffing impact is likely highest
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Takeaways -->
+      <section class="project-section" id="takeaways">
+        <div class="container">
+          <div class="section-card">
+            <h2 class="section-title">Takeaways</h2>
+
+            <p>
+              This project demonstrates Excel-driven analysis that translates
+              public health trends into operational planning insight. Instead of
+              presenting influenza deaths as historical reporting, the work
+              reframes the data into staffing signals—peak timing, variability,
+              and prioritization—so stakeholders can allocate staff earlier,
+              more efficiently, and with clearer justification.
+            </p>
+
+            <div class="takeaway-cta">
+              <a
+                class="btn btn-primary"
+                href="https://public.tableau.com/views/2_2_93/Story"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="btn-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M11 2h2v5h-2V2Zm0 15h2v5h-2v-5ZM2 11h5v2H2v-2Zm15 0h5v2h-5v-2ZM6.2 6.2l1.4-1.4L11 8.2V11H8.2L6.2 6.2Zm10.4 10.4-1.4 1.4L13 15.8V13h2.8l.8 3.6ZM17.8 6.2l-2 4.8H13V8.2l3.4-3.4 1.4 1.4ZM6.2 17.8l4.8-2V13H8.2l-3.4 3.4 1.4 1.4Z"
+                    />
+                  </svg>
+                </span>
+                <span class="btn-text">Open the Dashboard</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="project-footer">
+        <div class="container">
+          <a class="mini-link" href="#top">Back to top</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../assets/js/analytics.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Active-tab behavior -->
+    <script>
+      const tabs = Array.from(document.querySelectorAll(".project-tabs .tab"));
+      const sections = tabs
+        .map((t) => document.querySelector(t.getAttribute("href")))
+        .filter(Boolean);
+
+      const setActive = (id) => {
+        tabs.forEach((t) =>
+          t.classList.toggle("is-active", t.getAttribute("href") === "#" + id),
+        );
+      };
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) setActive(e.target.id);
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
+      );
+
+      sections.forEach((s) => obs.observe(s));
+    </script>
+  </body>
+</html>
