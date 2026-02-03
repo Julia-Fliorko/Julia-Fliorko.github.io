@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Churn Analysis | Julia Fliorko</title>
+
+  <!-- Global site CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <!-- Project-specific CSS (create this file or reuse a sibling page) -->
+  <link rel="stylesheet" href="../assets/css/projects/customer-churn.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYCBC5MYN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-DYCBC5MYN1");
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <nav class="nav">
+      <a href="../index.html#hero" class="brand" aria-label="Go to Home">Julia Fliorko</a>
+
+      <div class="nav-center">
+        <a href="../index.html#hero" class="nav-link">Home</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="project-page" id="top">
+    <section class="project-hero">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html#portfolio">Portfolio</a>
+          <span class="crumb-sep">›</span>
+          <span aria-current="page">Customer Churn Analysis</span>
+        </nav>
+
+        <div class="project-hero-grid">
+          <!-- Left: Hero card -->
+          <div class="project-hero-card">
+            <div class="project-hero-media" aria-hidden="true">
+              <!-- Replace with your actual hero image -->
+              <img src="../assets/images/customer-churn.webp" alt="" />
+            </div>
+
+            <div class="project-hero-content">
+              <h1 class="project-title">Customer Churn Analysis</h1>
+
+              <div class="project-subtitle">
+                <p>
+                  This project prepares a customer dataset for churn analysis.
+                  The work focuses on cleaning, validating, and documenting
+                  the data so it can be used reliably in later analysis or
+                  modeling.
+                </p>
+
+                <p>
+                  The raw data included missing values, inconsistent formats,
+                  mixed data types, and fields containing personally
+                  identifiable information (PII). I standardized missingness,
+                  corrected types and categories, removed PII, and created
+                  derived variables such as tenure, order frequency, and spend
+                  metrics.
+                </p>
+
+                <p>
+                  Output: a cleaned dataset for churn analysis, supporting
+                  visualizations, and notebooks that document the steps and
+                  decisions made during preprocessing.
+                </p>
+              </div>
+
+              <div class="project-chips" aria-label="Project tags">
+                <span class="chip pill">Python</span>
+                <span class="chip pill">pandas</span>
+                <span class="chip pill">Data Cleaning</span>
+                <span class="chip pill">Consistency Checks</span>
+                <span class="chip pill">EDA</span>
+                <span class="chip pill">Feature Engineering</span>
+                <span class="chip pill">Data Visualization</span>
+                <span class="chip pill">Excel Delivery</span>
+              </div>
+
+              <div class="project-cta">
+                <a class="btn btn-primary"
+                  href="https://github.com/Julia-Fliorko/customer-churn-analysis/tree/main/03%20Scripts" target="_blank"
+                  rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 4h7v7H4V4Zm9 0h7v4h-7V4ZM13 10h7v10h-7V10ZM4 13h7v7H4v-7Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">View Notebook Pipeline</span>
+                </a>
+
+                <a class="btn btn-ghost" href="https://github.com/Julia-Fliorko/customer-churn-analysis" target="_blank"
+                  rel="noreferrer">
+                  <span class="btn-ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 .8a11.2 11.2 0 0 0-3.54 21.8c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.47-2.47-.28-5.07-1.23-5.07-5.48 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.02 1.14a10.4 10.4 0 0 1 5.5 0c2.1-1.44 3.02-1.14 3.02-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.26-2.6 5.2-5.08 5.47.39.34.74 1.02.74 2.06v3.05c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z" />
+                    </svg>
+                  </span>
+                  <span class="btn-text">View GitHub Repo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Overview card -->
+          <aside class="project-overview" aria-label="Project overview">
+            <div class="overview-head">
+              <span class="overview-emoji" aria-hidden="true">📊</span>
+              <h2 class="overview-title">Project Overview</h2>
+            </div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Key Questions</h3>
+              <ul class="overview-list">
+                <li>What does churn look like across customer segments?</li>
+                <li>
+                  How do tenure, spend, and order behavior relate to churn?
+                </li>
+                <li>
+                  Which fields are reliable for modeling vs risky/noisy?
+                </li>
+                <li>
+                  Are there data issues that would bias downstream models?
+                </li>
+              </ul>
+            </div>
+
+            <div class="overview-divider" aria-hidden="true"></div>
+
+            <div class="overview-block">
+              <h3 class="overview-h3">Quick Facts</h3>
+              <ul class="overview-list">
+                <li>
+                  <strong>Focus:</strong> data readiness for churn analysis
+                  (pre-modeling)
+                </li>
+                <li>
+                  <strong>Work:</strong> PII removal + cleaning + validation +
+                  derived variables
+                </li>
+                <li>
+                  <strong>Output:</strong> consolidated, analysis-ready
+                  dataset + visuals
+                </li>
+                <li>
+                  <strong>Delivery:</strong> notebooks + final Excel file
+                </li>
+              </ul>
+            </div>
+
+            <div class="overview-links">
+              <a class="overview-link"
+                href="https://github.com/Julia-Fliorko/customer-churn-analysis/tree/main/03%20Scripts" target="_blank"
+                rel="noreferrer">Notebooks</a>
+              <span class="overview-sep">·</span>
+              <a class="overview-link" href="https://github.com/Julia-Fliorko/customer-churn-analysis" target="_blank"
+                rel="noreferrer">GitHub</a>
+              <span class="overview-sep">·</span>
+              <a class="overview-link" href="REPLACE_WITH_REPORT_PDF_URL" target="_blank" rel="noreferrer">Report
+                (PDF)</a>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Section tabs -->
+        <nav class="project-tabs" aria-label="Project sections">
+          <a class="tab is-active" href="#problem">Problem</a>
+          <a class="tab" href="#dataset">Dataset</a>
+          <a class="tab" href="#approach">Approach</a>
+          <a class="tab" href="#results">Results</a>
+          <a class="tab" href="#tools">Tools</a>
+          <a class="tab" href="#visualizations">Visualizations</a>
+          <a class="tab" href="#takeaways">Takeaways</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="project-section" id="problem">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Problem</h2>
+          <p>
+            Churn analysis depends on consistent definitions and clean data.
+            Before building any churn model, the dataset needs to be
+            structured, validated, and free of issues that can bias results.
+          </p>
+          <p>
+            This project focuses on dataset preparation: removing PII,
+            standardizing formats and missing values, validating key fields,
+            and creating stable derived features to support later churn
+            analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset -->
+    <section class="project-section" id="dataset">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Dataset</h2>
+
+          <div class="two-col">
+            <div class="col">
+              <h3 class="section-h3">Primary Dataset</h3>
+              <p>
+                Customer-level records with behavioral and transactional variables (for example: tenure, orders, spend,
+                and a churn label).
+              </p>
+              <p>
+                The dataset required preprocessing due to missing values, inconsistent formats, and mixed data types.
+              </p>
+            </div>
+
+            <div class="col">
+              <h3 class="section-h3">Why it matters</h3>
+              <p>
+                Data issues can distort churn results (for example: inconsistent definitions, leakage, or unhandled
+                missingness).
+              </p>
+              <p>
+                The goal is to produce a dataset that is suitable for analysis and modeling and is clearly documented.
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="project-section" id="approach">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Approach</h2>
+
+          <div class="step-list">
+            <div class="step">
+              <h3 class="step-title">1) PII Handling &amp; Governance</h3>
+              <p>
+                Removed personally identifiable information (PII) and documented the fields excluded from the final
+                dataset.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">
+                2) Data Cleaning &amp; Consistency Checks
+              </h3>
+              <p>
+                Standardized missing values, corrected data types, and applied consistency checks (ranges, categories,
+                and basic
+                validity rules).
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">3) Exploratory Data Analysis</h3>
+              <p>
+                Reviewed distributions and outliers to understand the data and to identify issues before feature
+                engineering.
+              </p>
+            </div>
+
+            <div class="step">
+              <h3 class="step-title">4) Feature Engineering + Export</h3>
+              <p>
+                Created derived variables (for example: tenure, order frequency, and spend metrics) and exported a
+                consolidated dataset for later analysis or modeling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="project-section" id="results">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Results</h2>
+
+          <ul class="bullets">
+            <li><strong>Standardized dataset:</strong> missing values, formats, and types were cleaned to improve
+              consistency.</li>
+            <li><strong>PII removed:</strong> sensitive identifiers were excluded to support safe sharing and analysis.
+            </li>
+            <li><strong>Derived features added:</strong> tenure, frequency, and spend variables were created using
+              consistent logic.</li>
+            <li><strong>Scope:</strong> the work covers data preparation and exploratory summaries, not churn model
+              performance.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="project-section" id="tools">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Tools</h2>
+
+          <div class="tools-grid">
+            <div class="tool">
+              <h3 class="tool-title">Data Wrangling</h3>
+              <p>pandas, numpy</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">EDA &amp; Visualization</h3>
+              <p>matplotlib, seaborn</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Workflow</h3>
+              <p>Jupyter Notebooks</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Delivery</h3>
+              <p>Excel (final output)</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Data Quality</h3>
+              <p>PII handling, consistency checks, validation rules</p>
+            </div>
+
+            <div class="tool">
+              <h3 class="tool-title">Deliverables</h3>
+              <p>Clean dataset, notebooks, and supporting charts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="project-section" id="visualizations">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Visualizations</h2>
+
+          <p class="section-lead">
+            The charts below summarize ordering behavior, spending patterns, customer attributes, and regional
+            differences.
+            They are grouped into four galleries.
+          </p>
+
+
+          <div class="viz-matrix">
+            <!-- 1) Order Volume + Timing -->
+            <article class="viz-panel">
+              <div class="viz-panel-head">
+                <h3 class="viz-panel-title">Order Volume &amp; Timing</h3>
+                <p class="viz-panel-sub">
+                  When customers order + where volume concentrates
+                </p>
+              </div>
+
+              <p class="viz-panel-desc">
+                Charts showing when customers place orders (by day and hour) and where order volume is concentrated.
+              </p>
+
+              <div class="viz-gallery" aria-label="Order volume and timing gallery">
+                <button class="viz-nav viz-prev" type="button" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.5 19 8.5 12l7-7" />
+                  </svg>
+                </button>
+                <button class="viz-nav viz-next" type="button" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 5 15.5 12l-7 7" />
+                  </svg>
+                </button>
+
+                <div class="viz-track" role="list" tabindex="0">
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/top_departments_by_number_of_orders.webp"
+                      alt="top_departments_by_number_of_orders" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Top Departments by Number of Orders
+                      </div>
+                      <div class="viz-item-desc">
+                        Order concentration by department (volume drivers).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_orders_by_day_of_week.webp" alt="total_orders_by_day_of_week"
+                      loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Orders by Day of Week
+                      </div>
+                      <div class="viz-item-desc">
+                        Weekly seasonality check — confirms day-of-week
+                        behavior.
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_orders_by_hour_of_the_day.webp"
+                      alt="total_orders_by_hour_of_the_day" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Orders by Hour of Day
+                      </div>
+                      <div class="viz-item-desc">
+                        Daily cycle check — identifies peak ordering hours.
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/orders_by_hour_of_the_day_and_day_of_the_week.webp"
+                      alt="orders_by_hour_of_the_day_and_day_of_the_week" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Orders by Hour and Day of Week
+                      </div>
+                      <div class="viz-item-desc">
+                        Time-of-week heatmap — shows combined day + hour
+                        patterns.
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/distribution_of_user_order_frequency.webp"
+                      alt="distribution_of_user_order_frequency" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Distribution of User Order Frequency
+                      </div>
+                      <div class="viz-item-desc">
+                        Distribution of customer activity levels (higher vs lower frequency).
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2) Spending + Sales -->
+            <article class="viz-panel">
+              <div class="viz-panel-head">
+                <h3 class="viz-panel-title">Spending &amp; Sales</h3>
+                <p class="viz-panel-sub">
+                  Total spend splits + sales by time
+                </p>
+              </div>
+
+              <p class="viz-panel-desc">
+                Charts summarizing spend by customer groups and sales patterns by time of day.
+              </p>
+
+              <div class="viz-gallery" aria-label="Spending and sales gallery">
+                <button class="viz-nav viz-prev" type="button" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.5 19 8.5 12l7-7" />
+                  </svg>
+                </button>
+                <button class="viz-nav viz-next" type="button" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 5 15.5 12l-7 7" />
+                  </svg>
+                </button>
+
+                <div class="viz-track" role="list" tabindex="0">
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_amont_spent_by_loyalty_status.webp"
+                      alt="total_amont_spent_by_loyalty_status" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Amount Spent by Loyalty Status
+                      </div>
+                      <div class="viz-item-desc">
+                        Spend split by loyalty status.
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_amount_spent_by_family_status.webp"
+                      alt="total_amount_spent_by_family_status" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Amount Spent by Family Status
+                      </div>
+                      <div class="viz-item-desc">
+                        Spend differences by family status (segment signal).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_amount_spent_by_gender_category.webp"
+                      alt="total_amount_spent_by_gender_category" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Amount Spent by Gender Category
+                      </div>
+                      <div class="viz-item-desc">
+                        Spend comparison by gender category (distribution
+                        check).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_amount_spent_by_income_bracket.webp"
+                      alt="total_amount_spent_by_income_bracket" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Amount Spent by Income Bracket
+                      </div>
+                      <div class="viz-item-desc">
+                        Spend gradient by income bracket (expected monotonic
+                        pattern).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/total_sales_by_hour_of_the_day.webp"
+                      alt="total_sales_by_hour_of_the_day" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Total Sales by Hour of Day
+                      </div>
+                      <div class="viz-item-desc">
+                        Revenue timing — identifies peak sales windows.
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/average_sale_value_by_hour_of_the_day.webp"
+                      alt="average_sale_value_by_hour_of_the_day" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Average Sale Value by Hour of Day
+                      </div>
+                      <div class="viz-item-desc">
+                        Average basket value by hour (value vs volume
+                        contrast).
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3) Frequency by Customer Attributes -->
+            <article class="viz-panel">
+              <div class="viz-panel-head">
+                <h3 class="viz-panel-title">
+                  Order Frequency by Customer Attributes
+                </h3>
+                <p class="viz-panel-sub">Age, gender, income, loyalty</p>
+              </div>
+
+              <p class="viz-panel-desc">
+                Frequency breakdowns by age, gender, income, and loyalty status.
+              </p>
+
+              <div class="viz-gallery" aria-label="Order frequency by attributes gallery">
+                <button class="viz-nav viz-prev" type="button" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.5 19 8.5 12l7-7" />
+                  </svg>
+                </button>
+                <button class="viz-nav viz-next" type="button" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 5 15.5 12l-7 7" />
+                  </svg>
+                </button>
+
+                <div class="viz-track" role="list" tabindex="0">
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/order_frequency_by_age_group.webp" alt="order_frequency_by_age_group"
+                      loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Order Frequency by Age Group
+                      </div>
+                      <div class="viz-item-desc">
+                        Order frequency distribution by age group (behavior
+                        shift).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/order_frequency_by_gender.webp" alt="order_frequency_by_gender"
+                      loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Order Frequency by Gender
+                      </div>
+                      <div class="viz-item-desc">
+                        Order frequency comparison by gender (segment check).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/order_frequency_by_income_bracket.webp"
+                      alt="order_frequency_by_income_bracket" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Order Frequency by Income Bracket
+                      </div>
+                      <div class="viz-item-desc">
+                        Order intensity by income bracket (affordability
+                        signal).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/oreder_frequency_by_loyalty_status.webp"
+                      alt="oreder_frequency_by_loyalty_status" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Order Frequency by Loyalty Status
+                      </div>
+                      <div class="viz-item-desc">
+                        Frequency by loyalty status (retention proxy signal).
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4) Region + Clustering Diagnostics -->
+            <article class="viz-panel">
+              <div class="viz-panel-head">
+                <h3 class="viz-panel-title">
+                  Region &amp; Clustering Diagnostics
+                </h3>
+                <p class="viz-panel-sub">
+                  Geography patterns + segmentation readiness
+                </p>
+              </div>
+
+              <p class="viz-panel-desc">
+                Regional differences in spending and ordering frequency, plus a pair-plot used to inspect customer
+                profile patterns.
+              </p>
+
+              <div class="viz-gallery" aria-label="Region and clustering diagnostics gallery">
+                <button class="viz-nav viz-prev" type="button" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.5 19 8.5 12l7-7" />
+                  </svg>
+                </button>
+                <button class="viz-nav viz-next" type="button" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.5 5 15.5 12l-7 7" />
+                  </svg>
+                </button>
+
+                <div class="viz-track" role="list" tabindex="0">
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/spending_habits_based_on_region.webp"
+                      alt="spending_habits_based_on_region" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Spending Habits by Region
+                      </div>
+                      <div class="viz-item-desc">
+                        Spend patterns by region (geographic variance check).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/how_often_do_users_order_in_each_region.webp"
+                      alt="how_often_do_users_order_in_each_region" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Ordering Frequency by Region
+                      </div>
+                      <div class="viz-item-desc">
+                        Ordering frequency by region (demand distribution).
+                      </div>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="viz-slide" role="listitem">
+                    <img src="../assets/images/viz/pair_plot_for_customer_profile_clustering.webp"
+                      alt="pair_plot_for_customer_profile_clustering" loading="lazy" decoding="async" />
+                    <figcaption class="viz-caption">
+                      <div class="viz-item-title">
+                        Pair Plot: Customer Profile Clustering
+                      </div>
+                      <div class="viz-item-desc">
+                        Pair-plot diagnostic used to inspect separation
+                        between customer profiles.
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="project-section" id="takeaways">
+      <div class="container">
+        <div class="section-card">
+          <h2 class="section-title">Takeaways</h2>
+
+          <p>
+            This project focuses on preparing customer data for churn analysis by cleaning, validating, and documenting
+            the
+            dataset and creating derived features.
+          </p>
+          <p>
+            The result is a dataset that can be used for segmentation and churn modeling with a clear record of
+            preprocessing
+            decisions.
+          </p>
+
+          <div class="takeaway-cta">
+            <a class="btn btn-primary"
+              href="https://github.com/Julia-Fliorko/customer-churn-analysis/tree/main/03%20Scripts" target="_blank"
+              rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h7v7H4V4Zm9 0h7v4h-7V4ZM13 10h7v10h-7V10ZM4 13h7v7H4v-7Z" />
+                </svg>
+              </span>
+              <span class="btn-text">Explore the Notebooks</span>
+            </a>
+
+            <a class="btn btn-ghost" href="https://github.com/Julia-Fliorko/customer-churn-analysis" target="_blank"
+              rel="noreferrer">
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .8a11.2 11.2 0 0 0-3.54 21.8c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.47-2.47-.28-5.07-1.23-5.07-5.48 0-1.21.43-2.2 1.13-2.98-.11-.28-.49-1.4.11-2.93 0 0 .92-.3 3.02 1.14a10.4 10.4 0 0 1 5.5 0c2.1-1.44 3.02-1.14 3.02-1.14.6 1.53.22 2.65.11 2.93.7.78 1.13 1.77 1.13 2.98 0 4.26-2.6 5.2-5.08 5.47.39.34.74 1.02.74 2.06v3.05c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z" />
+                </svg>
+              </span>
+              <span class="btn-text">GitHub Repo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="project-footer">
+      <div class="container">
+        <a class="mini-link" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../assets/js/analytics.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Active-tab behavior -->
+  <script>
+    const tabs = Array.from(document.querySelectorAll(".project-tabs .tab"));
+    const sections = tabs
+      .map((t) => document.querySelector(t.getAttribute("href")))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      tabs.forEach((t) =>
+        t.classList.toggle("is-active", t.getAttribute("href") === "#" + id),
+      );
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 },
+    );
+
+    sections.forEach((s) => obs.observe(s));
+  </script>
+
+  <script>
+    // Per-panel carousel controls (each panel scrolls independently)
+    (function () {
+      const galleries = document.querySelectorAll(".viz-gallery");
+
+      galleries.forEach((gallery) => {
+        const track = gallery.querySelector(".viz-track");
+        const prev = gallery.querySelector(".viz-prev");
+        const next = gallery.querySelector(".viz-next");
+        if (!track || !prev || !next) return;
+
+        const step = () => track.clientWidth;
+
+        prev.addEventListener("click", () => {
+          track.scrollBy({ left: -step(), behavior: "smooth" });
+        });
+
+        next.addEventListener("click", () => {
+          track.scrollBy({ left: step(), behavior: "smooth" });
+        });
+
+        // Keyboard support when the track is focused
+        track.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            track.scrollBy({ left: -step(), behavior: "smooth" });
+          }
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            track.scrollBy({ left: step(), behavior: "smooth" });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
